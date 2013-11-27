@@ -9,7 +9,8 @@ class Materia(models.Model):
 		return self.nombre
 
 class Alumno(models.Model):
-    materia = models.ForeignKey(Materia)
+    #materia = models.ForeignKey(Materia)
+    materia = models.ManyToManyField(Materia)
     nombre = models.CharField(max_length=200)
     archivo = models.FileField(upload_to='files/', null=True, blank=True)
 
